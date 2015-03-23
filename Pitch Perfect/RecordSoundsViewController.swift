@@ -23,15 +23,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-    }
     
     override func viewWillAppear(animated: Bool)
     {
@@ -45,6 +36,24 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         continueRecording.hidden = true
     }
 
+    
+    //
+    // Function: recordAudio
+    //
+    // Description:
+    //
+    //   From the AVFoundation framework, we're using the AVAudioRecorder library to
+    //   record audio (line 23).
+    //
+    //   Line 67 provides a path to the .DocumentDirectory in our app. Lines 67 - 75
+    //   help us access the filePath of each recording, which is required in order to
+    //   record (lines 80-84) and, later, for playback.
+    //
+    //   To ensure that each recording has a unique file name, lines 69 - 72 establish
+    //   the format of each file's name, which includes the current date and time of the
+    //   recording.
+    //
+    
     @IBAction func recordAudio(sender: UIButton)
     {
         stopButton.hidden = false
