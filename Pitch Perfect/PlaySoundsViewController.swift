@@ -11,11 +11,11 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
 
-    var audioPlayer:AVAudioPlayer!
-    var receivedAudio:RecordedAudio!
+    var audioPlayer: AVAudioPlayer!
+    var receivedAudio: RecordedAudio!
     
-    var audioEngine:AVAudioEngine!
-    var audioFile:AVAudioFile!
+    var audioEngine: AVAudioEngine!
+    var audioFile: AVAudioFile!
     
     override func viewDidLoad()
     {

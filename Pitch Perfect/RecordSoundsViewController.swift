@@ -20,8 +20,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var continueRecording: UILabel!
     
     
-    var audioRecorder:AVAudioRecorder!
-    var recordedAudio:RecordedAudio!
+    var audioRecorder: AVAudioRecorder!
+    var recordedAudio: RecordedAudio!
     
     
     override func viewWillAppear(animated: Bool)
@@ -37,22 +37,23 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     
-    //
-    // Function: recordAudio
-    //
-    // Description:
-    //
-    //   From the AVFoundation framework, we're using the AVAudioRecorder library to
-    //   record audio (line 23).
-    //
-    //   Line 67 provides a path to the .DocumentDirectory in our app. Lines 67 - 75
-    //   help us access the filePath of each recording, which is required in order to
-    //   record (lines 80-84) and, later, for playback.
-    //
-    //   To ensure that each recording has a unique file name, lines 69 - 72 establish
-    //   the format of each file's name, which includes the current date and time of the
-    //   recording.
-    //
+    /*
+    Function: recordAudio
+    
+    Description:
+    
+        From the AVFoundation framework, we're using the AVAudioRecorder library to
+        record audio (line 23).
+
+        Line 67 provides a path to the .DocumentDirectory in our app. Lines 67 - 75
+        help us access the filePath of each recording, which is required in order to
+        record (lines 80-84) and, later, for playback.
+    
+        To ensure that each recording has a unique file name, lines 69 - 72 establish
+        the format of each file's name, which includes the current date and time of the
+        recording.
+    */
+    
     
     @IBAction func recordAudio(sender: UIButton)
     {
@@ -118,7 +119,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if (segue.identifier == "stopRecording") {
-            let playSoundsVC:PlaySoundsViewController = segue.destinationViewController as PlaySoundsViewController
+            let playSoundsVC: PlaySoundsViewController = segue.destinationViewController as PlaySoundsViewController
             let data = sender as RecordedAudio
             playSoundsVC.receivedAudio = data
         }
